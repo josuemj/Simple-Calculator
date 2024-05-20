@@ -1,0 +1,2 @@
+npx storybook@latest init //install story book
+npm run storybook         //run storybook and open pages

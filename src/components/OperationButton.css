@@ -1,0 +1,14 @@
+.operation-button{
+    height: 120px;
+    width: 120px;
+    background-color: rgba(44,44,47,255);
+    color: rgb(12, 218, 26);
+    align-items: center;
+    justify-content: center;
+    border: none;
+    display: flex;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+

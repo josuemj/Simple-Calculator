@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import "./App.css";
+import OperationButton from "./components/OperationButton";
+import NumberContainer from "./components/NumberContainer";
 function App() {
-  const [count, setCount] = useState(0)
+
+  const operationSample = () => {
+    console.log("Operatacion button function")
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="calculator-container">
+        <div className="input-container">
+          input
+        </div>
+        <div className="buttons-container">
+          <OperationButton text={"C"}/>
+          <OperationButton text={"n"}/>{/*not necess*/}
+          <OperationButton text={"n"}/>{/*not necess*/}
+          <OperationButton text={"/"}/>
+
+          <NumberContainer text={"7"}/>
+          <NumberContainer text={"8"}/>
+          <NumberContainer text={"9"}/>
+          <OperationButton text={"X"}/>
+
+          <NumberContainer text={"4"}/>
+          <NumberContainer text={"5"}/>
+          <NumberContainer text={"6"}/>
+          <OperationButton text={"-"}/>
+
+          <NumberContainer text={"1"}/>
+          <NumberContainer text={"2"}/>
+          <NumberContainer text={"3"}/>
+          <OperationButton text={"+"}/>
+
+          <NumberContainer text={"-/+"}/> {/*not necess*/}
+          <NumberContainer text={"0"}/>
+          <NumberContainer text={"."}/>
+          <OperationButton text={"="}/>
+  
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;

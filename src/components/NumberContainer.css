@@ -1,0 +1,14 @@
+.number-button{
+    height: 120px;
+    width: 120px;
+    background-color: rgba(22,22,25,255);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    display: flex;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+
