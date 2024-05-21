@@ -13,7 +13,17 @@ function App() {
 
   const handleNumberClick = (number) => {
     console.log(`number: ${number}`);
-    setInput(input + number);
+
+    if(input.length >= 9){
+      console.log("overpassing 9 digits") 
+      if(isOperating){
+        setInput(input + number);
+      }
+    }else{
+      setInput(input + number);
+      console.log(`current len: ${input.length}`)
+    }
+
 
     if(isOperating){
       console.log("After opertaion")
@@ -22,7 +32,13 @@ function App() {
       setIsOperating(false)
 
     }else{
-      setCurrentNumber(currentNumber + number)
+      
+      if (input.length >= 9){
+        setCurrentNumber(currentNumber)
+      }else{
+        setCurrentNumber(currentNumber + number)
+      }
+      
     }
 
   };
@@ -34,10 +50,20 @@ function App() {
 
     } else if (operation == "=") {
       try {
-        console.log(input);
-        console.log(`result: ${eval(input).toString}`);
-        setInput(eval(input).toString());
-        setCurrentNumber(eval(input).toString())
+
+        console.log(`current input = ${input}`);
+        console.log(`result: ${eval(input).toString()}`);
+
+        var result = eval(input).toString()
+        console.log(`result length: ${result.length}`)
+        if (result.length > 9){
+          setInput("")
+          setCurrentNumber("Length error")
+        }else{
+          setInput(result);
+          setCurrentNumber(result)  
+        }
+       
       } catch (error) {
         setInput("Error");
       }
@@ -68,16 +94,16 @@ function App() {
           <NumberContainer text={"4"} onClick={handleNumberClick} />
           <NumberContainer text={"5"} onClick={handleNumberClick} />
           <NumberContainer text={"6"} onClick={handleNumberClick} />
-          <OperationButton text={"-"} onClick={handleNumberClick} />{" "}
+          <OperationButton text={"-"} onClick={handleOperationClick} />{" "}
           {/*Operation*/}
           <NumberContainer text={"1"} onClick={handleNumberClick} />
           <NumberContainer text={"2"} onClick={handleNumberClick} />
           <NumberContainer text={"3"} onClick={handleNumberClick} />
           <OperationButton text={"+"} onClick={handleOperationClick} />{" "}
           {/*Operation*/}
-          <NumberContainer text={"-/+"} /> {/*not necess*/}
+          <NumberContainer text={""} /> {/*not necess*/}
           <NumberContainer text={"0"} onClick={handleNumberClick} />
-          <NumberContainer text={"."} />
+          <NumberContainer text={"."} onClick={handleNumberClick}/>
           <OperationButton text={"="} onClick={handleOperationClick} />
         </div>
       </div>
