@@ -1,6 +1,6 @@
 .number-button{
-    height: 120px;
-    width: 120px;
+    height: 90px;
+    width: 90px;
     background-color: rgba(22,22,25,255);
     color: white;
     align-items: center;
@@ -9,6 +9,12 @@
     display: flex;
     border-radius: 50%;
     margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.number-button:hover{
+    background-color: rgb(61, 57, 57);
+
 }
 
 
