@@ -1,6 +1,7 @@
 import "./App.css";
 import OperationButton from "./components/OperationButton";
 import NumberContainer from "./components/NumberContainer";
+import EqualToButton from "./components/EqualToButton";
 import { useState } from "react";
 function App() {
   const operationSample = () => {
@@ -115,7 +116,7 @@ function App() {
           <NumberContainer text={"-/+"} onClick={handleNegativeNumber}/>
           <NumberContainer text={"0"} onClick={handleNumberClick} />
           <NumberContainer text={"."} onClick={handleNumberClick}/>
-          <OperationButton text={"="} onClick={handleOperationClick} />
+          <EqualToButton text={"="} onClick={handleOperationClick} />
         </div>
       </div>
     </>
