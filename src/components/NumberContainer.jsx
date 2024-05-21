@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 function NumberContainer({text, onClick}){
     return(
         <>
-            <button className='number-button' onClick={onClick}>
+            <button className='number-button' onClick={() => onClick(text)}>
                 <h1>{text}</h1>
             </button>
         </>

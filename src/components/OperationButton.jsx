@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function OperationButton({ text, onClick }) {
   return (
     <>
-      <button className="operation-button" onClick={onClick}>
+      <button className="operation-button" onClick={() => onClick(text)}>
         <h1>{text}</h1>
       </button>
     </>

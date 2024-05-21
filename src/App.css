@@ -17,6 +17,17 @@
   width: 100%;
   height: 360px;
   border-radius: 10px 10px 0px 0px;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;  
+  
+}
+
+
+.input-container h1{
+  font-size: 64;
+  padding: 20px;
 }
 
 .buttons-container{
