@@ -11,6 +11,11 @@ function App() {
   const [currentNumber, setCurrentNumber] = useState("")
   const [isOperating, setIsOperating] = useState(false)
 
+  const handleNegativeNumber = (number) => {
+    setInput("-"+input)
+    setCurrentNumber("-"+input)
+  }
+
   const handleNumberClick = (number) => {
     console.log(`number: ${number}`);
 
@@ -56,12 +61,18 @@ function App() {
 
         var result = eval(input).toString()
         console.log(`result length: ${result.length}`)
+
         if (result.length > 9){
           setInput("")
           setCurrentNumber("Length error")
         }else{
           setInput(result);
           setCurrentNumber(result)  
+        }
+
+        if(result < 0){
+          console.log("Negative result")
+          setCurrentNumber("Error (negative)")
         }
        
       } catch (error) {
@@ -101,7 +112,7 @@ function App() {
           <NumberContainer text={"3"} onClick={handleNumberClick} />
           <OperationButton text={"+"} onClick={handleOperationClick} />{" "}
           {/*Operation*/}
-          <NumberContainer text={""} /> {/*not necess*/}
+          <NumberContainer text={"-/+"} onClick={handleNegativeNumber}/>
           <NumberContainer text={"0"} onClick={handleNumberClick} />
           <NumberContainer text={"."} onClick={handleNumberClick}/>
           <OperationButton text={"="} onClick={handleOperationClick} />
