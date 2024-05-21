@@ -35,7 +35,7 @@ Running the Development Server. To run the project locally, use:
 ```bash
 npm run dev
 ```
-##Testing
+## Testing
 To run the tests, use:
 ```bash
 npm test
