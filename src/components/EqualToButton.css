@@ -1,0 +1,19 @@
+.equalTo-button{
+    height: 90px;
+    width: 90px;
+    background-color: rgba(48,134,6,255);
+    color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    border: none;
+    display: flex;
+    border-radius: 50%;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.equalTo-button:hover{
+    background-color: rgb(111, 230, 111);
+}
+
+
